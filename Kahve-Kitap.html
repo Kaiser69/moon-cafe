@@ -29,9 +29,6 @@
             line-height: 1.8;
             margin-bottom: 1.5rem;
         }
-        .emoji {
-            font-size: 1.5rem;
-        }
         .back-home-btn {
             display: inline-block;
             padding: 10px 20px;
@@ -46,7 +43,6 @@
         .back-home-btn:hover {
             background-color: #5a3a2f;
         }
-        /* Audio Controls */
         .audio-controls {
             margin-top: 1.5rem;
         }
@@ -67,6 +63,7 @@
 <body>
     <div class="container">
         <h1 class="heading">Kahve ve Kitap Buluşması: En Güzel Okuma Köşeleri</h1>
+
         <p class="content">
             Gün batmak üzereydi. Sessizliğin içinde, sadece pencereden dışarıya vuran yumuşak ışık ve mutfaktan gelen kahve kokusu vardı. O an, her şeyin mükemmel olacağına dair bir his vardı içimde. Hızla sona eren bir günün sonunda, en güzel anlar kitapla ve kahveyle başlar, değil mi?
         </p>
@@ -74,58 +71,57 @@
             Bütün günün karmaşasından sonra, evin en huzurlu köşesine, küçük okuma alanıma doğru ilerledim. O köşe, evin kalbinde saklı bir yerdi. Küçük bir kanepe, üzerinde rahat bir yastık, hemen yanında sıcak bir fincan kahve… İşte bu, benim okuma dünyama açılan kapıydı.
         </p>
         <p class="content">
-            İlk olarak, kahvemi hazırladım. Sıcak, taze demlenmiş bir kahve… Birkaç damla süt, biraz da tarçın ekledim. Fincanı elime aldım ve kitabımı almak için sehpanın üzerine doğru adım attım. Burası, ruhun dinlendiği, kelimelerin hayat bulduğu bir alandı. Kitaplarımla, kahvemi yudumlarken bir araya geldiğimiz her an, dünyadan uzaklaşıp bambaşka dünyalara yolculuk yapıyordum.
+            İlk olarak, kahvemi hazırladım. Sıcak, taze demlenmiş bir kahve… Birkaç damla süt, biraz da tarçın ekledim. Fincanı elime aldım ve kitabımı almak için sehpanın üzerine doğru adım attım.
         </p>
         <p class="content">
-            Okuma köşemin başlıca özelliği rahatlığıydı. Duvarın kenarına yerleştirilmiş bir kitap rafı, her türden kitaba ev sahipliği yapıyordu. Her kitap, kendi hikayesini fısıldamak için sırada bekliyordu. Yalnızca kitaplar değil, kahve de buranın ayrılmaz bir parçasıydı. Her iki öğe birleştiğinde, sayfalarda kaybolan bir ruhun yeniden doğuşu gibi hissediyordum.
-        </p>
-        <p class="content">
-            O köşe, sadece kitaplarla değil, aynı zamanda düşüncelerle de doluydu. En sevdiğim zamanlar, bir romanın ortasında kaybolduğum anlar değil, kahvemi yudumlarken kitaba ara verdiğim ve düşüncelerime dalıp içsel bir yolculuğa çıktığım anlardı. Kahve, bir tür terapi gibiydi. Kitap ise, kalbime dokunan melodik bir şarkı gibi.
-        </p>
-        <p class="content">
-            Bu köşede geçirdiğim her dakika, zamanın ötesine taşar. Dışarıdaki dünya silikleşir, kahvem ve kitabım arasında kaybolurum. Bazen tarihi bir romanın içinde, bazen de uzak diyarlardan gelen eski bir şiirin derinliklerinde bulurum kendimi. Her sayfa, içimdeki merakı uyandırır; her yudum, ruhumu canlandırır.
+            O köşe, sadece kitaplarla değil, aynı zamanda düşüncelerle de doluydu. En sevdiğim zamanlar, bir romanın ortasında kaybolduğum anlar değil, kahvemi yudumlarken kitaba ara verdiğim ve düşüncelerime dalıp içsel bir yolculuğa çıktığım anlardı.
         </p>
         <p class="content">
             Gecenin ilerleyen saatlerinde, kitaplarımın sayfalarını çevirdikçe, kahvem beni daha da sarar. Küçük okuma köşemde, dünyanın en huzurlu anlarını yaşarım. Çünkü kitap ve kahve, her ikisi de aynı şeydir: Birer kaçış. Hem dış dünyadan, hem de kendi düşüncelerimizin karmaşasından.
         </p>
         <p class="content">
-            En güzel okuma köşeleri, aslında dışarıda değil, kalbimizin en derin köşelerindedir. Herkesin kendine özgü bir köşesi vardır; kimisi bir balkon, kimisi bir kütüphane, kimisi de evinin en sessiz köşesidir. Ama en güzel olanı, o köşe ne olursa olsun, içinde kahve ve kitap bulunduran yerdir.
-        </p>
-        <p class="content">
             Çünkü kahve ve kitap, kelimelerle dokunur, duygularla harmanlanır. Birleştiğinde ise en güzel hikayeler başlar.
         </p>
 
-        <!-- Audio Controls -->
         <div class="audio-controls">
             <button class="audio-btn" id="play-btn">Dinle</button>
-            <button class="audio-btn" id="stop-btn" style="display:none;">Dur</button>
+            <button class="audio-btn" id="pause-btn" style="display:none;">Dur</button>
+            <button class="audio-btn" id="resume-btn" style="display:none;">Devam Et</button>
         </div>
 
-        <!-- Back to Home Button -->
         <a href="index.html" class="back-home-btn">Home</a>
     </div>
 
-    <!-- Audio File -->
     <audio id="coffeeAudio" src="./audio/Kahve-Kitap.mp3" preload="auto"></audio>
 
     <script>
         const playBtn = document.getElementById("play-btn");
-        const stopBtn = document.getElementById("stop-btn");
+        const pauseBtn = document.getElementById("pause-btn");
+        const resumeBtn = document.getElementById("resume-btn");
         const audio = document.getElementById("coffeeAudio");
 
-        // Play the audio when play button is clicked
+        let isPaused = false;
+
         playBtn.addEventListener("click", () => {
             audio.play();
-            playBtn.style.display = "none";  // Hide play button
-            stopBtn.style.display = "inline-block";  // Show stop button
+            playBtn.style.display = "none";
+            pauseBtn.style.display = "inline-block";
         });
 
-        // Stop the audio when stop button is clicked
-        stopBtn.addEventListener("click", () => {
+        pauseBtn.addEventListener("click", () => {
             audio.pause();
-            audio.currentTime = 0;  // Reset the audio to start from the beginning
-            stopBtn.style.display = "none";  // Hide stop button
-            playBtn.style.display = "inline-block";  // Show play button
+            isPaused = true;
+            pauseBtn.style.display = "none";
+            resumeBtn.style.display = "inline-block";
+        });
+
+        resumeBtn.addEventListener("click", () => {
+            if (isPaused) {
+                audio.play();
+                isPaused = false;
+                resumeBtn.style.display = "none";
+                pauseBtn.style.display = "inline-block";
+            }
         });
     </script>
 </body>

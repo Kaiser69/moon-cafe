@@ -219,3 +219,7 @@ window.confirmOrder = confirmOrder;
 window.onload = () => {
   sendToCart();  // Load cart items from localStorage when the page loads
 };
+
+
+// Load cart items from localStorage when the page loads
+

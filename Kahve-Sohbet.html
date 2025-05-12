@@ -43,7 +43,6 @@
         .back-home-btn:hover {
             background-color: #3d2f24;
         }
-        /* Audio Controls */
         .audio-controls {
             margin-top: 1.5rem;
         }
@@ -66,42 +65,50 @@
         <h1 class="heading">Bir Kahve, Bir Sohbet: İyi Bir Muhabbetin Sırrı</h1>
         <p class="content">Bir fincan kahve... Dumanı tüten, sıcacık bir dost gibi. Masanın üzerinde dururken sadece kafein kokusu yaymaz; aynı zamanda bir davetiye gibidir. “Gel, otur. Biraz laflayalım,” der sanki. Kahve bahane, sohbet şahane...</p>
         <p class="content">Sabahın erken saatlerinde, güneş henüz perdelerin arasından sızarken ilk yudum alınır. Sessizdir ortam; sadece kahve fincanının kenarına hafifçe vurulan kaşığın tınısı duyulur. Bir bakış, bir gülümseme ve ardından gelen ilk soru: “Ee, anlat bakalım, neler oldu?”</p>
-        <p class="content">Bir fincan kahveyle başlayan sohbetler bazen saatler sürer. Birinci yudum alınır, geçmiş günlerin tozu havalanır...</p>
+        <p class="content">Bir fincan kahveyle başlayan sohbetler bazen saatler sürer. Birinci yudum alınır, geçmiş günlerin tozu havalanır. İkinci yudumda hatıralar canlanır. Üçüncü yudumda ise kalpler yumuşar, diller çözülür. Anılar, kahve kokusuyla harmanlanır; anlık sessizlikler, fincanın dudaklara her temasında bozulur.</p>
         <p class="content">Kahve bahane, sohbet şahane... Çünkü bazen insanlar sadece dinlenmek ister. Anlatmak değil; karşısındakinin gözlerine bakıp sessizce anlaşılmak. Bir kahveyle başlayan sohbetler, bu yüzden özeldir.</p>
         <p class="content">Bir fincan kahve... Sadece içindeki kafeinle canlandırmaz insanı. Aynı zamanda anıları tazeler, kalpleri ısıtır. Çünkü kahve, sadece bir içecek değil; bir bahanedir.</p>
         <p class="content">Ve unutma: Kahve bahane, sohbet şahane... Çünkü kahve içilir, ama sohbet ruhu besler. ☕💛😊</p>
 
-        <!-- Audio Controls -->
         <div class="audio-controls">
             <button class="audio-btn" id="play-btn">Dinle</button>
-            <button class="audio-btn" id="stop-btn" style="display:none;">Dur</button>
+            <button class="audio-btn" id="pause-btn" style="display:none;">Dur</button>
+            <button class="audio-btn" id="resume-btn" style="display:none;">Devam Et</button>
         </div>
 
-        <!-- Back to Home Button -->
         <a href="index.html" class="back-home-btn">Home</a>
     </div>
 
-    <!-- Audio File -->
     <audio id="coffeeChatAudio" src="./audio/Kahve-Sohbet.mp3" preload="auto"></audio>
 
     <script>
         const playBtn = document.getElementById("play-btn");
-        const stopBtn = document.getElementById("stop-btn");
+        const pauseBtn = document.getElementById("pause-btn");
+        const resumeBtn = document.getElementById("resume-btn");
         const audio = document.getElementById("coffeeChatAudio");
 
-        // Play the audio when play button is clicked
+        let isPaused = false;
+
         playBtn.addEventListener("click", () => {
             audio.play();
-            playBtn.style.display = "none";  // Hide play button
-            stopBtn.style.display = "inline-block";  // Show stop button
+            playBtn.style.display = "none";
+            pauseBtn.style.display = "inline-block";
         });
 
-        // Stop the audio when stop button is clicked
-        stopBtn.addEventListener("click", () => {
+        pauseBtn.addEventListener("click", () => {
             audio.pause();
-            audio.currentTime = 0;  // Reset the audio to start from the beginning
-            stopBtn.style.display = "none";  // Hide stop button
-            playBtn.style.display = "inline-block";  // Show play button
+            isPaused = true;
+            pauseBtn.style.display = "none";
+            resumeBtn.style.display = "inline-block";
+        });
+
+        resumeBtn.addEventListener("click", () => {
+            if (isPaused) {
+                audio.play();
+                isPaused = false;
+                resumeBtn.style.display = "none";
+                pauseBtn.style.display = "inline-block";
+            }
         });
     </script>
 </body>

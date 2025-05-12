@@ -67,35 +67,19 @@
 <body>
     <div class="container">
         <h1 class="heading">Kahve ile Başlayan Hikayeler: Bir Fincan Kahvenin Anlattıkları</h1>
-        <p class="content">
-            Bir fincan kahve... Sadece bir içecek mi, yoksa hayatın tüm sırlarını fısıldayan bir dost mu? Düşünün; sabahın köründe gözünüzü zar zor açmışsınız. İlk yudumda göz kapaklarınız yavaşça aralanır, beyniniz “Sistem başlatılıyor...” der. İşte o an, kahve size konuşmaya başlar:
-        </p>
-        <p class="content">
-            “Kalk bakalım tembel! Dünya dönüyor, toplantıya geç kaldın!”
-        </p>
-        <p class="content">
-            İkinci yudumda ise biraz daha dostane bir tonda:
-        </p>
-        <p class="content">
-            “Hadi, hallederiz biz bu günü. Önce beni bitir, sonra düşünürüz.”
-        </p>
-        <p class="content">
-            Üçüncü yudumda ise bambaşka bir hava:
-        </p>
-        <p class="content">
-            “Biliyor musun, dün gece yaptığın saçma yorumu hala düşünüyorlar. Ama boşver, ben buradayım!”
-        </p>
-        <p class="content">
+        <p class="content" id="story-text">
+            Bir fincan kahve... Sadece bir içecek mi, yoksa hayatın tüm sırlarını fısıldayan bir dost mu? Düşünün; sabahın köründe gözünüzü zar zor açmışsınız. İlk yudumda göz kapaklarınız yavaşça aralanır, beyniniz “Sistem başlatılıyor...” der. İşte o an, kahve size konuşmaya başlar: “Kalk bakalım tembel! Dünya dönüyor, toplantıya geç kaldın!”
+            İkinci yudumda ise biraz daha dostane bir tonda: “Hadi, hallederiz biz bu günü. Önce beni bitir, sonra düşünürüz.”
+            Üçüncü yudumda ise bambaşka bir hava: “Biliyor musun, dün gece yaptığın saçma yorumu hala düşünüyorlar. Ama boşver, ben buradayım!”
             Kahve, sadece kafein değil; mini bir terapist, dert ortağı, sabahın ilk ışıklarında uykunun çekiştirdiği bir kurtarıcıdır. Yani bir fincan kahve asla sadece bir fincan kahve değildir. O, bazen bir dertleşme seansı, bazen de içsel bir motivasyon konuşmasıdır.
-        </p>
-        <p class="content">
             Bu yüzden her sabah fincana uzandığınızda iyi dinleyin. Çünkü kahve size bir şeyler anlatıyor olabilir... <span class="emoji">☕😉</span>
         </p>
 
         <!-- Audio Controls -->
         <div class="audio-controls">
             <button class="audio-btn" id="play-btn">Dinle</button>
-            <button class="audio-btn" id="stop-btn" style="display:none;">Dur</button>
+            <button class="audio-btn" id="pause-btn" style="display:none;">Dur</button>
+            <button class="audio-btn" id="resume-btn" style="display:none;">Devam Et</button>
         </div>
 
         <!-- Back to Home Button -->
@@ -107,23 +91,29 @@
 
     <script>
         const playBtn = document.getElementById("play-btn");
-        const stopBtn = document.getElementById("stop-btn");
+        const pauseBtn = document.getElementById("pause-btn");
+        const resumeBtn = document.getElementById("resume-btn");
         const audio = document.getElementById("coffeeAudio");
 
-        // Play the audio when play button is clicked
         playBtn.addEventListener("click", () => {
             audio.play();
-            playBtn.style.display = "none";  // Hide play button
-            stopBtn.style.display = "inline-block";  // Show stop button
+            playBtn.style.display = "none";
+            pauseBtn.style.display = "inline-block";
+            resumeBtn.style.display = "none";
         });
 
-        // Stop the audio when stop button is clicked
-        stopBtn.addEventListener("click", () => {
+        pauseBtn.addEventListener("click", () => {
             audio.pause();
-            audio.currentTime = 0;  // Reset the audio to start from the beginning
-            stopBtn.style.display = "none";  // Hide stop button
-            playBtn.style.display = "inline-block";  // Show play button
+            pauseBtn.style.display = "none";
+            resumeBtn.style.display = "inline-block";
         });
+
+        resumeBtn.addEventListener("click", () => {
+            audio.play();
+            resumeBtn.style.display = "none";
+            pauseBtn.style.display = "inline-block";
+        });
+
     </script>
 </body>
 </html>
