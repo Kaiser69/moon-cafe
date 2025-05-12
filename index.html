@@ -1,0 +1,530 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>complete responsive coffee shop website design</title>
+
+    <!-- font awesome cdn link  -->
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.15.4/css/all.min.css">
+
+    <!-- custom css file link  -->
+    <link rel="stylesheet" href="css/style.css">
+
+</head>
+<body>
+    
+<!-- header section starts  -->
+
+<header class="header">
+
+    <a href="#" class="logo">
+        <img src="images/logo.png" alt="">
+    </a>
+
+    <nav class="navbar">
+        <a href="#home">ana sayfa</a>
+        <a href="#about">hakkımızda</a>
+        <a href="#menu">menü</a>
+        <a href="#products">ürünler</a>
+        <a href="#review">yorumlar</a>
+        <a href="#contact">iletişim</a>
+        <a href="#blogs">bloglar</a>
+    </nav>
+
+     <!-----cart section------>
+    <section class="cart">
+        <div class="icons">
+            <div class="fas fa-search" id="search-btn"></div>
+            <div class="fas fa-shopping-cart" id="cart-btn"></div>
+            <div class="fas fa-bars" id="menu-btn"></div>
+        </div>
+    
+        <div class="search-form">
+            <input type="search" id="search-box" placeholder="search here...">
+            <label for="search-box" class="fas fa-search"></label>
+        </div>
+    
+        <div class="cart-items-container" id="cart-items-container">
+            <!-- Dynamic Cart Items will be added here -->
+            <a href="#" class="btn">checkout now</a>
+        </div>
+    </section>
+
+</header>
+
+<!-- header section ends -->
+
+<!-- home section starts  -->
+
+<section class="home" id="home">
+
+    <div class="content">
+        <h3> Kahve İçmenin Faydaları</h3>
+        <p>Kahvenin içeriğinde bulunan antioksidanlar hücreleri korur ve güçlenmelerini destekler. Sağlıklı bağırsak hücrelerini koruyarak bağırsak hareketlerini düzenler. Doğru miktarlarda ve zamanlamayla alışkanlık haline getirilen sabah kahvesi, kalp krizi riskini azaltabilir. Gün boyunca enerjik kalmanıza yardımcı olur.</p>
+        <a href="#menu" class="btn">Şimdi al</a>
+    </div>
+
+</section>
+
+<!-- home section ends -->
+
+<!-- about section starts  -->
+
+<section class="about" id="about">
+
+    <h1 class="heading"> <span>Hakkımız</span> da </h1>
+
+    <div class="row">
+
+        <div class="image">
+            <img src="images/about-img.jpeg" alt="">
+        </div>
+
+        <div class="content">
+            <h3>Kahvemizi Özel Yapan Nedir?</h3>
+            <p>Bizim için kahve, sadece bir içecekten çok daha fazlası. Her fincanda sunduğumuz kahve, özenle seçilen yüksek kaliteli çekirdeklerin el emeği ile harmanlanmasından doğuyor.</p>
+            <p>🌱 Doğal ve Sürdürülebilir: Kahvemizin her bir çekirdeği, çevre dostu yöntemlerle yetiştirilir ve tazeliğini koruyacak şekilde işlenir.</p>
+            <p>
+                ☕ Zanaatkarlık ve Tutku: Kahve çekirdeklerini en iyi ustalarımız kavurur ve her fincanda mükemmel aromayı yakalamak için ideal sıcaklıkta demlenir.
+            </p>
+            <p>
+                🌟 Eşsiz Tarifler: Klasik lezzetlerden özel harmanlara kadar, damak zevkinize hitap edecek geniş bir kahve menüsü sunuyoruz.
+            </p>
+            <p>
+                💛 Samimi Atmosfer: Sadece kahve değil, aynı zamanda sıcak bir ortamda keyifli sohbetler de sunuyoruz.
+
+Bir fincan kahvemizi deneyimleyin ve farkı hissedin. Gerçek kahve keyfi burada başlıyor!
+            </p>
+            <a href="#blogs" class="btn">Daha fazla öğren</a>
+        </div>
+
+    </div>
+
+</section>
+
+<!-- about section ends -->
+
+<!-- menu section starts  -->
+
+<section class="menu" id="menu">
+
+    <h1 class="heading"> Menü <span>müz</span> </h1>
+
+    <div class="box-container">
+
+        <div class="box">
+            <img src="images/menu-1.png" alt="">
+            <h3>Espresso</h3>
+            <div class="price">35₺</div>
+            <a href="javascript:void(0);" class="btn" onclick="openModal()">Sepete Ekle</a>
+        </div>
+
+        <div class="box">
+            <img src="images/menu-2.png" alt="">
+            <h3>Latte</h3>
+            <div class="price">40₺</div>
+            <a href="javascript:void(0);" class="btn" onclick="openModal()">Sepete Ekle</a>
+        </div>
+
+        <div class="box">
+            <img src="images/menu-3.png" alt="">
+            <h3>Cappuccino </h3>
+            <div class="price">42₺</div>
+            <a href="javascript:void(0);" class="btn" onclick="openModal()">Sepete Ekle</a>
+        </div>
+
+        <div class="box">
+            <img src="images/menu-4.png" alt="">
+            <h3>Mocha</h3>
+            <div class="price">45₺</div>
+            <a href="javascript:void(0);" class="btn" onclick="openModal()">Sepete Ekle</a>
+        </div>
+
+        <div class="box">
+            <img src="images/menu-5.png" alt="">
+            <h3>Cold Brew</h3>
+            <div class="price">50₺</div>
+            <a href="javascript:void(0);" class="btn" onclick="openModal()">Sepete Ekle</a>
+        </div>
+
+        <div class="box">
+            <img src="images/menu-6.png" alt="">
+            <h3>Americano</h3>
+            <div class="price">30₺</div>
+            <a href="javascript:void(0);" class="btn" onclick="openModal()">Sepete Ekle</a>
+        </div>
+        <div class="box">
+            <img src="images/menu-5.png" alt="">
+            <h3>Flat White </h3>
+            <div class="price">38₺</span></div>
+            <a href="javascript:void(0);" class="btn" onclick="openModal()">Sepete Ekle</a>
+        </div>
+
+        <div class="box">
+            <img src="images/menu-6.png" alt="">
+            <h3>Türk Kahvesi</h3>
+            <div class="price">25₺</div>
+            <a href="javascript:void(0);" class="btn" onclick="openModal()">Sepete Ekle</a>
+        </div>
+
+    </div>
+
+</section>
+
+
+ <!-- Coffee Order Modal -->
+  
+ <div id="orderModal" class="modal">
+    <div class="modal-content">
+      <span class="close" onclick="closeModal()">&times;</span>
+      <h2>Siparişinizi Oluşturun</h2>
+  
+      <div class="order-info">
+        <label for="client-name">Müşteri Adı:</label>
+        <input type="text" id="client-name" placeholder="Adınızı girin..." required>
+  
+        <label for="table-number">Masa Numarası:</label>
+        <input type="number" id="table-number" placeholder="Masa Numarası" required min="1">
+      </div>
+  
+      <div class="coffee-selection">
+        <h3>Kahve Seçimi</h3>
+        <div class="coffee-list">
+          <div class="coffee-option">
+            <label>Espresso - 35₺</label>
+            <input type="number" class="coffee-quantity" data-coffee="Espresso" data-price="35" min="0" value="0">
+          </div>
+          <div class="coffee-option">
+            <label>Americano - 30₺</label>
+            <input type="number" class="coffee-quantity" data-coffee="Americano" data-price="30" min="0" value="0">
+          </div>
+          <div class="coffee-option">
+            <label>Latte - 40₺</label>
+            <input type="number" class="coffee-quantity" data-coffee="Latte" data-price="40" min="0" value="0">
+          </div>
+          <div class="coffee-option">
+            <label>Cappuccino - 42₺</label>
+            <input type="number" class="coffee-quantity" data-coffee="Cappuccino" data-price="42" min="0" value="0">
+          </div>
+          <div class="coffee-option">
+            <label>Mocha - 45₺</label>
+            <input type="number" class="coffee-quantity" data-coffee="Mocha" data-price="45" min="0" value="0">
+          </div>
+          <div class="coffee-option">
+            <label>Türk Kahvesi - 25₺</label>
+            <input type="number" class="coffee-quantity" data-coffee="Türk Kahvesi" data-price="25" min="0" value="0">
+          </div>
+          <div class="coffee-option">
+            <label>Cold Brew - 50₺</label>
+            <input type="number" class="coffee-quantity" data-coffee="Cold Brew" data-price="50" min="0" value="0">
+          </div>
+          <div class="coffee-option">
+            <label>Flat White - 38₺</label>
+            <input type="number" class="coffee-quantity" data-coffee="Flat White" data-price="38" min="0" value="0">
+          </div>
+        </div>
+      </div>
+  
+      <div class="order-summary">
+        <h3>Sipariş Özeti</h3>
+        <table id="order-table">
+          <thead>
+            <tr>
+              <th>Kahve Türü</th>
+              <th>Adet</th>
+              <th>Birim Fiyat</th>
+              <th>Toplam</th>
+            </tr>
+          </thead>
+          <tbody></tbody>
+        </table>
+  
+        <div class="total-price">
+          <strong>Toplam Fiyat: <span id="total-price">0₺</span></strong>
+        </div>
+      </div>
+  
+      <button id="confirm-order" onclick="confirmOrder()">Siparişi Onayla</button>
+    </div>
+  </div>
+
+<!-- menu section ends -->
+
+<section class="products" id="products">
+
+    <h1 class="heading"> Tatlı Cenneti 🍰 - 
+        <span>Enfes Lezzetler Burada!</span> </h1>
+
+    <div class="box-container">
+
+        <div class="box">
+            <div class="icons">
+                <a href="#" class="fas fa-shopping-cart"></a>
+                <a href="#" class="fas fa-heart"></a>
+                <a href="#" class="fas fa-eye"></a>
+            </div>
+            <div class="image">
+                <img src="images/product-1.png" alt="">
+            </div>
+            <div class="content">
+                <h3>lotus pasta</h3>
+                <div class="stars">
+                    <i class="fas fa-star"></i>
+                    <i class="fas fa-star"></i>
+                    <i class="fas fa-star"></i>
+                    <i class="fas fa-star"></i>
+                    <i class="fas fa-star-half-alt"></i>
+                </div>
+                <div class="price">80₺</div>
+            </div>
+        </div>
+
+        <div class="box">
+            <div class="icons">
+                <a href="#" class="fas fa-shopping-cart"></a>
+                <a href="#" class="fas fa-heart"></a>
+                <a href="#" class="fas fa-eye"></a>
+            </div>
+            <div class="image">
+                <img src="images/product-2.png" alt="">
+            </div>
+            <div class="content">
+                <h3>soguk baklava </h3>
+                <div class="stars">
+                    <i class="fas fa-star"></i>
+                    <i class="fas fa-star"></i>
+                    <i class="fas fa-star"></i>
+                    <i class="fas fa-star"></i>
+                    <i class="fas fa-star-half-alt"></i>
+                </div>
+                <div class="price">80₺</div>
+            </div>
+        </div>
+
+        <div class="box">
+            <div class="icons">
+                <a href="#" class="fas fa-shopping-cart"></a>
+                <a href="#" class="fas fa-heart"></a>
+                <a href="#" class="fas fa-eye"></a>
+            </div>
+            <div class="image">
+                <img src="images/product-3.png" alt="">
+            </div>
+            <div class="content">
+                <h3>kardelen tatlısı</h3>
+                <div class="stars">
+                    <i class="fas fa-star"></i>
+                    <i class="fas fa-star"></i>
+                    <i class="fas fa-star"></i>
+                    <i class="fas fa-star"></i>
+                    <i class="fas fa-star-half-alt"></i>
+                </div>
+                <div class="price">80₺</div>
+            </div>
+        </div>
+
+    </div>
+
+</section>
+
+<!-- review section starts  -->
+
+<section class="review" id="review">
+
+    <h1 class="heading"> "Kulağımıza  <span>Gelenler!"</span> </h1>
+
+    <div class="box-container">
+
+        <div class="box">
+            <img src="images/quote-img.png" alt="" class="quote">
+            <p>"Burası sadece bir kahveci değil, adeta huzur dolu bir kaçış noktası. Kitabımı alıp arka köşedeki rahat koltukta saatlerce oturuyorum. Sakin müzik, lezzetli kahve ve tatlılar… Burada zamanın nasıl geçtiğini anlamıyorum bile!"</p>
+            <img src="images/pic-1.png" class="user" alt="">
+            <h3>Kaan</h3>
+            <div class="stars">
+                <i class="fas fa-star"></i>
+                <i class="fas fa-star"></i>
+                <i class="fas fa-star"></i>
+                <i class="fas fa-star"></i>
+                <i class="fas fa-star-half-alt"></i>
+            </div>
+        </div>
+
+        <div class="box">
+            <img src="images/quote-img.png" alt="" class="quote">
+            <p>"Kahve konusunda oldukça seçiciyimdir ama buradaki espresso resmen mükemmel! Hem yoğun hem de yumuşak içimli. Ayrıca baristalar da kahve konusunda inanılmaz bilgili ve sohbet etmeye bayılıyorlar. Buraya her geldiğimde yeni bir şey öğreniyorum!"</p>
+            <img src="images/pic-2.png" class="user" alt="">
+            <h3> Aslı </h3>
+            <div class="stars">
+                <i class="fas fa-star"></i>
+                <i class="fas fa-star"></i>
+                <i class="fas fa-star"></i>
+                <i class="fas fa-star"></i>
+                <i class="fas fa-star-half-alt"></i>
+            </div>
+        </div>
+        
+        <div class="box">
+            <img src="images/quote-img.png" alt="" class="quote">
+            <p>"Okul çıkışı arkadaşlarımla buraya gelmek artık bir gelenek haline geldi. Kahve eşliğinde uzun uzun sohbetler, tatlı kaçamakları ve kahkahalar... Burası adeta ikinci evimiz gibi oldu. Özellikle karamelli cheesecake efsane!"</p>
+            <img src="images/pic-3.png" class="user" alt="">
+            <h3>Can</h3>
+            <div class="stars">
+                <i class="fas fa-star"></i>
+                <i class="fas fa-star"></i>
+                <i class="fas fa-star"></i>
+                <i class="fas fa-star"></i>
+                <i class="fas fa-star-half-alt"></i>
+            </div>
+        </div>
+
+    </div>
+
+</section>
+
+<!-- review section ends -->
+
+<!-- contact section starts  -->
+
+<section class="contact" id="contact">
+
+    <h2 class="heading"> <span>"Sohbetin En Güzel Eşiği: </span> Bir Fincan Kahve!"</h2>
+
+    <div class="row">
+
+        <iframe class="map" src="https://www.google.com/maps/embed/v1/place?q=Kuzeykent%20Mahallesi%20Kamil%20Demircio%C4%9Flu%20Caddesi%20No%3A4%20CH%20Merkez%20%7C%20Kastamonu%2037150%20Kastamonu%2C%20Turkey&key=AIzaSyBFw0Qbyq9zTFTd-tUY6dZWTgaQzuU17R8"></iframe>
+
+       
+        <form action="#" onsubmit="sendEmail(event)">
+            <h3>Biz Buradayız, Ya Siz?</h3>
+            
+            <div class="inputBox">
+                <span class="fas fa-user"></span>
+                <input type="text" id="name" placeholder="Adınız" required>
+            </div>
+            
+            <div class="inputBox">
+                <span class="fas fa-envelope"></span>
+                <input type="email" id="email" placeholder="Email" required>
+            </div>
+            
+            <div class="inputBox">
+                <span class="fas fa-phone"></span>
+                <input type="number" id="phone" placeholder="Telefon" required>
+            </div>
+        
+            <div class="inputBox">
+                <span class="fas fa-comment"></span>
+                <textarea id="message" placeholder="Mesajınız" required></textarea>
+            </div>
+        
+            <button type="submit" class="btn">İletişime Geçin</button>
+        </form>
+        
+        
+    </div>
+
+</section>
+
+<!-- contact section ends -->
+
+<!-- blogs section starts  -->
+
+<section class="blogs" id="blogs">
+
+    <h1 class="heading">Kahve  <span>Sohbetleri</span> </h1>
+
+    <div class="box-container">
+
+        <div class="box">
+            <div class="image">
+                <img src="images/blog-1.jpeg" alt="">
+            </div>
+            <div class="content">
+                <a href="#" class="title">"Kahve ile Başlayan Hikayeler"</a>
+                <span>Yazar: Admin / 11 Mayıs 2025</span>
+                <p>"Kahve ile Başlayan Hikayeler: Bir Fincan Kahvenin Anlattıkları"</p>
+                <a class="btn" href="kahve-hikayeleri.html" target="_blank"  >Devamını Oku</a>
+            </div>
+        </div>
+
+        <div class="box">
+            <div class="image">
+                <img src="images/blog-2.jpeg" alt="">
+            </div>
+            <div class="content">
+                <a href="#" class="title">"Kahve ve Kitap Buluşması"</a>
+                <span>Yazar: Admin / 11 Mayıs 2025</span>
+                <p>"Kahve ve Kitap Buluşması: En Güzel Okuma Köşeleri"</p>
+                <a class="btn" href="Kahve-Kitap.html" target="_blank" >Devamını Oku</a>
+            </div>
+        </div>
+
+        <div class="box">
+            <div class="image">
+                <img src="images/blog-3.jpeg" alt="">
+            </div>
+            <div class="content">
+                <a href="#" class="title">"Bir Kahve, Bir Sohbet"</a>
+                <span>Yazar: Admin / 11 Mayıs 2025</span>
+                <p>"Bir Kahve, Bir Sohbet: İyi Bir Muhabbetin Sırrı"</p>
+                <a class="btn" href="Kahve-Sohbet.html" target="_blank" >Devamını Oku</a>
+            </div>
+        </div>
+
+    </div>
+
+</section>
+
+<!-- blogs section ends -->
+
+<!-- footer section starts  -->
+
+<section class="footer">
+
+    <div class="share">
+        <a href="https://www.facebook.com/profile.php?id=100087271125900" class="fab fa-facebook-f" target="_blank"></a>
+        <a href="#" class="fab fa-twitter"></a>
+        <a href="#" class="fab fa-instagram"></a>
+        <a href="#" class="fab fa-linkedin"></a>
+        <a href="#" class="fab fa-pinterest"></a>
+    </div>
+
+    <div class="links">
+        <a href="#home">ana sayfa</a>
+        <a href="#about">hakkımızda</a>
+        <a href="#menu">menü</a>
+        <a href="#products">ürünler</a>
+        <a href="#review">yorumlar</a>
+        <a href="#contact">iletişim</a>
+        <a href="#blogs">bloglar</a>
+    </div>
+
+    <div class="credit">created by <span>Moon Cofe</span> | all rights reserved</div>
+
+</section>
+
+<!-- footer section ends -->
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+<!-- custom js file link  -->
+<script src="js/script.js"></script>
+
+</body>
+</html>

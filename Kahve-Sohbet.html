@@ -1,0 +1,108 @@
+<!DOCTYPE html>
+<html lang="tr">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Bir Kahve, Bir Sohbet</title>
+    <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@400;600&display=swap" rel="stylesheet">
+    <style>
+        body {
+            font-family: 'Poppins', sans-serif;
+            background-color: #faf3e0;
+            color: #5a4635;
+            margin: 0;
+            padding: 0;
+        }
+        .container {
+            max-width: 800px;
+            margin: 0 auto;
+            padding: 2rem;
+            text-align: center;
+        }
+        .heading {
+            font-size: 2rem;
+            font-weight: 600;
+            margin-bottom: 1.5rem;
+        }
+        .content {
+            font-size: 1rem;
+            line-height: 1.8;
+            margin-bottom: 1.5rem;
+        }
+        .back-home-btn {
+            display: inline-block;
+            padding: 10px 20px;
+            background-color: #5a4635;
+            color: #fff;
+            font-weight: bold;
+            text-decoration: none;
+            border-radius: 5px;
+            margin-top: 2rem;
+            transition: background-color 0.3s;
+        }
+        .back-home-btn:hover {
+            background-color: #3d2f24;
+        }
+        /* Audio Controls */
+        .audio-controls {
+            margin-top: 1.5rem;
+        }
+        .audio-btn {
+            padding: 10px 20px;
+            background-color: #5a4635;
+            color: #fff;
+            font-weight: bold;
+            border-radius: 5px;
+            cursor: pointer;
+            transition: background-color 0.3s;
+        }
+        .audio-btn:hover {
+            background-color: #3d2f24;
+        }
+    </style>
+</head>
+<body>
+    <div class="container">
+        <h1 class="heading">Bir Kahve, Bir Sohbet: İyi Bir Muhabbetin Sırrı</h1>
+        <p class="content">Bir fincan kahve... Dumanı tüten, sıcacık bir dost gibi. Masanın üzerinde dururken sadece kafein kokusu yaymaz; aynı zamanda bir davetiye gibidir. “Gel, otur. Biraz laflayalım,” der sanki. Kahve bahane, sohbet şahane...</p>
+        <p class="content">Sabahın erken saatlerinde, güneş henüz perdelerin arasından sızarken ilk yudum alınır. Sessizdir ortam; sadece kahve fincanının kenarına hafifçe vurulan kaşığın tınısı duyulur. Bir bakış, bir gülümseme ve ardından gelen ilk soru: “Ee, anlat bakalım, neler oldu?”</p>
+        <p class="content">Bir fincan kahveyle başlayan sohbetler bazen saatler sürer. Birinci yudum alınır, geçmiş günlerin tozu havalanır...</p>
+        <p class="content">Kahve bahane, sohbet şahane... Çünkü bazen insanlar sadece dinlenmek ister. Anlatmak değil; karşısındakinin gözlerine bakıp sessizce anlaşılmak. Bir kahveyle başlayan sohbetler, bu yüzden özeldir.</p>
+        <p class="content">Bir fincan kahve... Sadece içindeki kafeinle canlandırmaz insanı. Aynı zamanda anıları tazeler, kalpleri ısıtır. Çünkü kahve, sadece bir içecek değil; bir bahanedir.</p>
+        <p class="content">Ve unutma: Kahve bahane, sohbet şahane... Çünkü kahve içilir, ama sohbet ruhu besler. ☕💛😊</p>
+
+        <!-- Audio Controls -->
+        <div class="audio-controls">
+            <button class="audio-btn" id="play-btn">Dinle</button>
+            <button class="audio-btn" id="stop-btn" style="display:none;">Dur</button>
+        </div>
+
+        <!-- Back to Home Button -->
+        <a href="index.html" class="back-home-btn">Home</a>
+    </div>
+
+    <!-- Audio File -->
+    <audio id="coffeeChatAudio" src="./audio/Kahve-Sohbet.mp3" preload="auto"></audio>
+
+    <script>
+        const playBtn = document.getElementById("play-btn");
+        const stopBtn = document.getElementById("stop-btn");
+        const audio = document.getElementById("coffeeChatAudio");
+
+        // Play the audio when play button is clicked
+        playBtn.addEventListener("click", () => {
+            audio.play();
+            playBtn.style.display = "none";  // Hide play button
+            stopBtn.style.display = "inline-block";  // Show stop button
+        });
+
+        // Stop the audio when stop button is clicked
+        stopBtn.addEventListener("click", () => {
+            audio.pause();
+            audio.currentTime = 0;  // Reset the audio to start from the beginning
+            stopBtn.style.display = "none";  // Hide stop button
+            playBtn.style.display = "inline-block";  // Show play button
+        });
+    </script>
+</body>
+</html>
