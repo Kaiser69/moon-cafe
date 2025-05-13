@@ -1,0 +1,94 @@
+<!DOCTYPE html>
+<html lang="tr">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Dashboard - Siparişler</title>
+    <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@400;600&display=swap" rel="stylesheet">
+    <style>
+        body {
+            font-family: 'Poppins', sans-serif;
+            background-color: #faf3e0;
+            color: #5a4635;
+            margin: 0;
+            padding: 0;
+        }
+        .container {
+            max-width: 800px;
+            margin: 0 auto;
+            padding: 2rem;
+            text-align: center;
+        }
+        .heading {
+            font-size: 2rem;
+            font-weight: 600;
+            margin-bottom: 1.5rem;
+        }
+        table {
+            width: 100%;
+            border-collapse: collapse;
+            margin-bottom: 2rem;
+        }
+        th, td {
+            padding: 10px;
+            border: 1px solid #5a4635;
+            text-align: left;
+        }
+        .back-btn {
+            padding: 10px 20px;
+            background-color: #5a4635;
+            color: #fff;
+            font-weight: bold;
+            text-decoration: none;
+            border-radius: 5px;
+        }
+        .back-btn:hover {
+            background-color: #3d2f24;
+        }
+    </style>
+</head>
+<body>
+    <div class="container">
+        <h1 class="heading">Siparişler Dashboard</h1>
+        <table>
+            <thead>
+                <tr>
+                    <th>Müşteri Adı</th>
+                    <th>Masa No</th>
+                    <th>Adet</th>
+                    <th>Tarih & Saat</th>
+                </tr>
+            </thead>
+            <tbody id="orders-table-body">
+                <!-- Orders will be populated here -->
+            </tbody>
+        </table>
+        <a href="order.html" class="back-btn">Sipariş Ver</a>
+    </div>
+
+    <script>
+        function loadOrders() {
+            const orders = JSON.parse(localStorage.getItem("orders")) || [];
+            const tableBody = document.getElementById("orders-table-body");
+            tableBody.innerHTML = "";
+
+            if (orders.length === 0) {
+                tableBody.innerHTML = "<tr><td colspan='4'>Henüz sipariş yok.</td></tr>";
+                return;
+            }
+
+            orders.forEach(order => {
+                const row = `<tr>
+                    <td>${order.clientName}</td>
+                    <td>${order.tableNumber}</td>
+                    <td>${order.quantity}</td>
+                    <td>${order.timestamp}</td>
+                </tr>`;
+                tableBody.innerHTML += row;
+            });
+        }
+
+        window.onload = loadOrders;
+    </script>
+</body>
+</html>

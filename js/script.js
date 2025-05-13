@@ -147,7 +147,7 @@ function sendToCart() {
   });
 }
 
-// Confirm Order
+// Confirm Order (Ensuring At Least One Item Is Selected)
 function confirmOrder() {
   const clientName = document.getElementById("client-name").value.trim();
   const tableNumber = document.getElementById("table-number").value.trim();
@@ -158,6 +158,21 @@ function confirmOrder() {
     return;
   }
 
+  // Check if at least one item has been selected
+  let itemSelected = false;
+  document.querySelectorAll(".coffee-quantity").forEach(input => {
+    const qty = parseInt(input.value);
+    if (qty > 0) {
+      itemSelected = true;
+    }
+  });
+
+  if (!itemSelected) {
+    alert("Lütfen en az bir ürün seçin!");
+    return;  // Stop the order process if no item is selected
+  }
+
+  // If items are selected, proceed with adding them to the cart
   document.querySelectorAll(".coffee-quantity").forEach(input => {
     const qty = parseInt(input.value);
     const coffeeName = input.dataset.coffee;
@@ -179,9 +194,9 @@ function confirmOrder() {
   });
 
   localStorage.setItem('cartItems', JSON.stringify(cartItems));
-  sendToCart();
+  sendToCart();  // Update the cart UI after confirming
   alert(`Sipariş onaylandı!\nMüşteri: ${clientName}\nMasa: ${tableNumber}\nToplam: ${document.getElementById("total-price").textContent}`);
-  closeModal();
+  closeModal();  // Close the modal after order confirmation
 }
 
 // Email Form Submission
@@ -219,7 +234,3 @@ window.confirmOrder = confirmOrder;
 window.onload = () => {
   sendToCart();  // Load cart items from localStorage when the page loads
 };
-
-
-// Load cart items from localStorage when the page loads
-
